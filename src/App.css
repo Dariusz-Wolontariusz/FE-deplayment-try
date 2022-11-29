@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+* {
+  /* border: 1px solid grey; */
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: 'Solway', serif; */
+  /* font-family: 'Silkscreen', cursive; */
+  /* font-family: 'Aldrich', sans-serif; */
+  font-family: 'Graduate', cursive;
+}
+button {
+  cursor: pointer;
+}
+ul, li {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+.App {
+  /* background-color: rgb(219, 255, 255); */
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+.hello{
+  /* background-color: rgb(255, 238, 218); */
+  font-weight: 700;
+  font-size: 40px;
+  margin: 1rem 0;
+}
+.timer-and-sound {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80rem;
+}
+.Sound {
+  /* background-color: rgb(255, 203, 203); */
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5rem;
+}
+.Sound-selector {
+  font-size: 20px;
+}
+.Sound-lable{
+  margin-right: 0.5rem;
+}
+.Timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #959DA5; */
+  margin-top: 1rem;
+}
+.clock-view {
+  font-size: 50px;
+  color: rgb(128, 0, 47);
+  font-weight: 700;
+  /* background-color: rgb(190, 255, 255); */
+}
+.top-of-clock, .bottom-of-clock {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  /* background-color: rgb(255, 180, 88); */
+}
+.change-time-button {
+  font-size: 30px;
+  color: rgb(78, 0, 28);
+  cursor: pointer;
+}
+.names-and-wish-container {
+  /* background-color: rgb(250, 215, 215); */
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: center;
+  padding: 2rem;
+}
+.input-and-cards {
+  /* background-color: rgb(219, 181, 255); */
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 1rem;
+}
+.input {
+  /* background-color: rgb(104, 104, 104); */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.name-list__input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+.name__list {
+  /* background-color: rgb(0, 0, 0); */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+.name-list__card {
+  list-style: none;
+  cursor: move;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: antiquewhite; */
+  border-radius: 5px;
+  border: 2px dashed pink;
+  width: 100%;
+  padding: 8px;
+  margin: 3px 0;
+  background-color: #fffafe;
+}
+.person {
+  word-break: break-all;
+  white-space: normal;
+  width: 95%;
+}
+.card--active{
+  background-color: rgb(255, 234, 255);
+}
+.name-list__card--button {
+  color: 'red';
+   cursor: 'pointer';
+    margin: '0.5rem';
+}
+.funnyWish {
+  /* background-color: rgb(240, 255, 245); */
+  width: 40rem;
+}
+.wish-and-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.luck {
+  font-size: 20px;
+  padding: 0.5rem;
+
+}
+.image {
+  width: 100%;
+  border-radius: 8px;
+}
+.name__list {
+  /* background-color: rgb(22, 27, 32); */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.name-list__button {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Secular One', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.name-list__button:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.name-list__button:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.name-list__button:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.name-list__button:focus {
+  outline: 1px transparent;
+}
+
+.name-list__button:before {
+  display: none;
+}
+
+.name-list__button:-webkit-details-marker {
+  display: none;
+}
+
+.Sound-player--button > img {
+  width: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.two-buttons > button > img {
+  width: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.Sound-player--button {
+  border: none;
+  background-color: white;
+  color: none;
+  margin-left: 0.3rem;
+}
+
+.two-buttons > button {
+  border: none;
+  background-color: white;
+  color: none;
+}
+
+.funnyWish-button > img {
+  width: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.funnyWish-button {
+  border: none;
+  background-color: white;
+  color: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .timer-and-sound {
+    flex-direction: column;
+    width: 100%;
+  }
+  .Sound {
+    margin: 1rem 0;
+  }
+  .names-and-wish-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+  }
+  .image {
+    width: 100%;
+  }
+  .input-and-cards {
+    width: 100%;
+    padding-right: 0; 
+  }
+  .input {
+    width: 100%;
+  }
+  .name-list__card {
+    width: 100%;
+  }
+  .wish-and-button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .funnyWish {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
