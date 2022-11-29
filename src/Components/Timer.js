@@ -32,12 +32,6 @@ const Timer = (props) => {
         '--percent': timeModified ? 0 : (selectedTime - counter) / selectedTime * 100,
     };
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const pauseTimer = useCallback(() => {
-        // this is how we clear the interval - stop the ticking. 
-        if (Ref.current) clearInterval(Ref.current)
-        setPlaying(false)
-    })
     console.log(initialCounter)
     //  checking [counter] every time it changes. handling transition.
     useEffect(() => {
@@ -46,7 +40,7 @@ const Timer = (props) => {
                 setCounter(selectedTime)
                 setIsChanging(false)
                 if (!autonext) {
-                    pauseTimer()
+                    console.log('go home')
                 }
 
                 document.getElementById('player').pause()
@@ -67,7 +61,7 @@ const Timer = (props) => {
         if (secs <= 9) { secs = '0' + Number(secs) }
         setMinutes(mins)
         setSeconds(secs)
-    }, [autonext, counter, isChanging, pauseTimer, selectedTime, setCounter, setIsChanging, setMinutes, setSeconds]);
+    }, [autonext, counter, isChanging, selectedTime, setCounter, setIsChanging, setMinutes, setSeconds]);
     //getting whatever they typed and setting it as new time, setTimeModified- when we hit play we want to know if we interacted with the time so we set a new time
     const editTimerMinutes = (newMinutes) => {
         setMinutes(newMinutes)
@@ -138,17 +132,22 @@ const Timer = (props) => {
         Ref.current = id;
         setPlaying(true)
     }
+    // const pauseTimer = () => {
+    //     // this is how we clear the interval - stop the ticking. 
+    //     if (Ref.current) clearInterval(Ref.current)
+    //     setPlaying(false)
+    // }
 
     const stopTimer = () => {
 
-        pauseTimer()
+        // pauseTimer()
         setCounter(selectedTime)
     }
     //my button alternates between stop and start based on state.
     // for now all we do with playing is set the button
     let button;
     if (playing) {
-        button = <button onClick={pauseTimer}>
+        button = <button >
             <img src={pauseButton} alt='pause' />
         </button>;
 
