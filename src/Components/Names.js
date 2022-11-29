@@ -2,7 +2,7 @@ import React from 'react'
 import Input from './InputContainer'
 import Cards from './Cards'
 import { v4 as uuidv4 } from 'uuid'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import MainContext from '../Context'
 
 
