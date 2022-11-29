@@ -43,8 +43,8 @@ const Sound = () => {
     })
       .then
     setSoundIsRefreshed(true)
+    console.log(response)
   }
-
   return (
     soundIsRefreshed && <div className='Sound'>
       <label className='Sound-lable' htmlFor='SoundSelector'>🎶 </label>

@@ -2,7 +2,7 @@ import React from 'react'
 import Input from './InputContainer'
 import Cards from './Cards'
 import { v4 as uuidv4 } from 'uuid'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import MainContext from '../Context'
 
 
@@ -10,9 +10,9 @@ import MainContext from '../Context'
 
 const Names = () => {
   const { names, setNames } = useContext(MainContext)
-  const { mobName } = useContext(MainContext)
-  const { isChanging, setIsChanging } = useContext(MainContext)
-  const [idToToggle, setIdToToggle] = useState('')
+  // const { mobName } = useContext(MainContext)
+  // const { isChanging, setIsChanging } = useContext(MainContext)
+  // const [idToToggle, setIdToToggle] = useState('')
   // const [isActive, setIsActive] = useState(false)
 
   // useEffect(() => {

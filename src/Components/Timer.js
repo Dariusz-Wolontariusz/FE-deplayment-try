@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 import playButton from './Buttons/play-button-black.png'
 import stopButton from './Buttons/stop-button-black.png'
 import pauseButton from './Buttons/pause-button-black.png'
@@ -32,7 +32,13 @@ const Timer = (props) => {
         '--percent': timeModified ? 0 : (selectedTime - counter) / selectedTime * 100,
     };
 
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const pauseTimer = useCallback(() => {
+        // this is how we clear the interval - stop the ticking. 
+        if (Ref.current) clearInterval(Ref.current)
+        setPlaying(false)
+    })
+    console.log(initialCounter)
     //  checking [counter] every time it changes. handling transition.
     useEffect(() => {
         if (counter === -1) {
@@ -61,7 +67,7 @@ const Timer = (props) => {
         if (secs <= 9) { secs = '0' + Number(secs) }
         setMinutes(mins)
         setSeconds(secs)
-    }, [counter]);
+    }, [autonext, counter, isChanging, pauseTimer, selectedTime, setCounter, setIsChanging, setMinutes, setSeconds]);
     //getting whatever they typed and setting it as new time, setTimeModified- when we hit play we want to know if we interacted with the time so we set a new time
     const editTimerMinutes = (newMinutes) => {
         setMinutes(newMinutes)
@@ -131,11 +137,6 @@ const Timer = (props) => {
         // this is useful for pausing, clearing and starting timer. it will allow us to call clear interval function
         Ref.current = id;
         setPlaying(true)
-    }
-    const pauseTimer = () => {
-        // this is how we clear the interval - stop the ticking. 
-        if (Ref.current) clearInterval(Ref.current)
-        setPlaying(false)
     }
 
     const stopTimer = () => {

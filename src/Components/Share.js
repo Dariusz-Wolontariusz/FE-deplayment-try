@@ -49,7 +49,7 @@ const Share = () => {
 
     updateMob()
     console.log('Patch')
-  }, [names])
+  }, [mobName, names])
 
    //function to copy url
    const getCurrentUrl = (e) => {

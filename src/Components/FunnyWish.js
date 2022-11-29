@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import refreshButton from './Buttons/refresh-button-pink.png';
 import MainContext from '../Context'
 
@@ -13,8 +13,8 @@ function FunnyWish() {
     const [catData, setCatData] = React.useState(savedCat);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-    const [name, setName] = useState('friend');
-    const { isChanging, setIsChanging } = useContext(MainContext)
+    // const [name, setName] = useState('friend');
+    // const { isChanging, setIsChanging } = useContext(MainContext)
 
 // console.log(names, 'maria-names')
 
@@ -28,7 +28,10 @@ function FunnyWish() {
 
 
     const changeActiveName = () => {
-        setName(names.find(person => person.isActive).name)
+       if ( names.length>0 && names.find(person => person.isActive)) {
+       return names.find(person => person.isActive).name
+       }  
+       else return "friend"
     }
 
     const handleFetch = () => {
@@ -44,9 +47,10 @@ function FunnyWish() {
                 setErrorMessage("Unable to fetch cat");
                 setIsLoading(false);
             });
-        // setCatData(mockData)
+            setCatData(mockData)
 
     };
+    console.log(isLoading, errorMessage)
 
     // useEffect(() => {
     //     if (savedCat.length === 0) {
@@ -60,9 +64,9 @@ function FunnyWish() {
 
     return (
         <div className='funnyWish'>
-            <button onClick={changeActiveName}>Click </button>
+            {/* <button onClick={changeActiveName}>Click </button> */}
             <div className='wish-and-button'>
-                <p className='luck'>Good luck, {name}!</p>
+                <p className='luck'>Good luck, {changeActiveName()}!</p>
                 <button className='funnyWish-button' onClick={handleFetch}>
                     <img src={refreshButton} alt='refresh' />
                 </button>
